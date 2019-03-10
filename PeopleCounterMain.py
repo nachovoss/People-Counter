@@ -14,7 +14,7 @@ textOut = 0
 def testIntersectionIn(x, y):
     res = -450 * x + 400 * y + 157500
     if ((res >= -550) and (res < 550)):
-        print(str(res))
+        #print(str(res)) not printing this saves processing power making the program run extreamly faster
         return True
     return False
 
@@ -22,7 +22,7 @@ def testIntersectionIn(x, y):
 def testIntersectionOut(x, y):
     res = -450 * x + 400 * y + 180000
     if ((res >= -550) and (res <= 550)):
-        print(str(res))
+        #print(str(res))not printing this saves processing power making the program run extreamly faster
         return True
 
     return False
@@ -65,11 +65,9 @@ if __name__ == "__main__":
         cnts = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[0]
         # loop over the contours
         for c in cnts:
-            print(c)
-            # if the contour is too small, ignore it
-            if cv2.contourArea(c) < 12000:
-                continue
-            # compute the bounding box for the contour, draw it on the frame,
+            #print(c)not printing this saves processing power making the program run extreamly faster
+            
+            
             # and update the text
             (x, y, w, h) = cv2.boundingRect(c)
             cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
